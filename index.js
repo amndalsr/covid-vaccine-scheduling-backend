@@ -1,33 +1,16 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const appointmentRoutes = require("./routes/appointments");
+
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
 
-let appointments = [];
+app.use("/api/appointments", appointmentRoutes);
 
-app.post('/appointments', (req, res) => {
-  const { name, birthDate, appointmentDate, appointmentTime } = req.body;  
-  const newAppointment = { name, birthDate, appointmentDate, appointmentTime, status: 'pendente' };
-
-  const sameTimeAppointments = appointments.filter(
-    (appointment) =>
-      appointment.appointmentDate === appointmentDate &&
-      appointment.appointmentTime === appointmentTime
-  );
-
-  if (sameTimeAppointments.length >= 2) {
-    return res.status(400).json({ message: 'Horário indisponível.' });
-  }
-
-  appointments.push(newAppointment);
-  res.status(201).json(newAppointment);
-});
-
-app.get('/appointments', (req, res) => {
-  res.json(appointments);
-});
-
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
