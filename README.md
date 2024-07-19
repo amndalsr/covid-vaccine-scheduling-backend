@@ -11,14 +11,14 @@ Este repositório contém o backend do sistema de agendamento de vacinação par
 
 ## 🚀 Tecnologias utilizadas
 
-- `JavaScript` - linguagem de programação principal 
-- `Node.js` - runtime
-- `Express.js` - framework
-- `Jest` - para testes
-- `Supertest` - para testes de integração
-- `body-parser` - para parsing do corpo das requisições
-- `cors` - para permitir requisições de diferentes origens
-- `fs` - para operações de leitura e escrita em arquivos
+- `JavaScript` - Linguagem de programação principal 
+- `Node.js` - Runtime
+- `Express.js` - Framework
+- `Jest` - Para testes
+- `Supertest` - Para testes de integração
+- `body-parser` - Para parsing do corpo das requisições
+- `cors` - Para permitir requisições de diferentes origens
+- `fs` - Para operações de leitura e escrita em arquivos
 
 ## 🛠️ Abrir e rodar o projeto
 
